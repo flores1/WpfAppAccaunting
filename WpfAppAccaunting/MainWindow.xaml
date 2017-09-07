@@ -1,0 +1,42 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppAccaunting"
+        xmlns:model="clr-namespace:WpfAppAccaunting.model" x:Class="WpfAppAccaunting.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded">
+    <Window.Resources>
+
+        <CollectionViewSource x:Key="skladsViewSource1" d:DesignSource="{d:DesignInstance {x:Type model:sklads}, CreateList=True}"/>
+    </Window.Resources>
+
+    <Grid DataContext="{StaticResource skladsViewSource1}" > 
+
+        <Button Content="ADD" HorizontalAlignment="Left" Margin="10,289,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" x:Name="add"/>
+        <Button Content="DEL" HorizontalAlignment="Left" Margin="90,289,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" x:Name="del" RenderTransformOrigin="0.413,5.35"/>
+        <Button Content="READ" HorizontalAlignment="Left" Margin="170,289,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" x:Name="read"/>
+
+        <DataGrid x:Name="skladsDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource skladsViewSource1}}"  RowDetailsVisibilityMode="VisibleWhenSelected" Margin="0,0,0,50">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn x:Name="datapostuplenColumn" Header="datapostuplen" Width="SizeToHeader">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <DatePicker SelectedDate="{Binding datapostuplen, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn x:Name="idColumn" Binding="{Binding Id}" Header="Id" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="postavshikColumn" Binding="{Binding Postavshik}" Header="Postavshik" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="stoimostColumn" Binding="{Binding stoimost}" Header="stoimost" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="tovarColumn" Binding="{Binding Tovar}" Header="Tovar" Width="SizeToHeader"/>
+
+               
+            </DataGrid.Columns>
+        </DataGrid>
+        
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,51 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:model="clr-namespace:WpfAppAccaunting.model" x:Class="WpfAppAccaunting.Window1"
+        mc:Ignorable="d"
+    xmlns:local="clr-namespace:WpfAppAccaunting.valid"
+        Title="Window1" Height="300" Width="300" Loaded="Window_Loaded">
+    <Window.Resources>
+
+        <CollectionViewSource x:Key="skladsViewSource" d:DesignSource="{d:DesignInstance {x:Type model:sklads}, CreateList=True}"/>
+    </Window.Resources>
+    <Grid>
+
+        <Grid x:Name="grid1" VerticalAlignment="Top" Margin="15" HorizontalAlignment="Center" DataContext="{StaticResource skladsViewSource}">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFC5EE8A" Offset="0"/>
+                    <GradientStop Color="#FFE4FBC4" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label VerticalAlignment="Center" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="datapostuplen:"/>
+            <DatePicker x:Name="datapostuplenDatePicker"   VerticalAlignment="Center" SelectedDate="{Binding datapostuplen, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="1"/>
+            <Label VerticalAlignment="Center" Grid.Row="1" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Id:"/>
+            <TextBox x:Name="idTextBox" Width="120" VerticalAlignment="Center" Text="{Binding Id, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="1" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
+            <Label VerticalAlignment="Center" Grid.Row="2" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Postavshik:"/>
+            <TextBox x:Name="postavshikTextBox" Width="120" VerticalAlignment="Center" Text="{Binding Postavshik, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="2" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
+            <Label VerticalAlignment="Center" Grid.Row="3" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="stoimost:"/>
+            <TextBox x:Name="stoimostTextBox" Width="120" VerticalAlignment="Center"  Text="{Binding stoimost, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="3" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
+            <Label VerticalAlignment="Center" Grid.Row="4" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Tovar:"/>
+            <TextBox x:Name="tovarTextBox" Width="120" VerticalAlignment="Center" Text="{Binding Tovar, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="4" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
+        </Grid>
+
+
+        <Button Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="59" Margin="115,183,0,0" Click="ButSave_Click_2"/>
+       
+
+    </Grid>
+</Window>
