@@ -12,12 +12,13 @@ namespace WpfAppAccaunting.model
     using System;
     using System.Collections.Generic;
     
-    public partial  class zakazies
+    public partial class zakazies
     {
         public int Id { get; set; }
         public string Zakazchik { get; set; }
-        public string Tovar { get; set; }
-        public decimal Stoimost { get; set; }
+        public string TovarZ { get; set; }
         public System.DateTime Datazakaza { get; set; }
+        public int CountZ { get; set; }
+        public decimal Stoimost { get; set; }
     }
 }

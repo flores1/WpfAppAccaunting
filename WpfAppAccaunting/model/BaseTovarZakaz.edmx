@@ -23,8 +23,9 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Postavshik" Type="String" Nullable="false" />
           <Property Name="Tovar" Type="String" Nullable="false" />
-          <Property Name="stoimost" Type="Decimal" Nullable="false" />
-          <Property Name="datapostuplen" Type="DateTime" Nullable="false" />
+          <Property Name="Datapostup" Type="DateTime" Nullable="false" />
+          <Property Name="count" Type="Int32" Nullable="false" />
+          <Property Name="Stoimost" Type="Decimal" Nullable="false" />
         </EntityType>
         <EntityType Name="zakazies">
           <Key>
@@ -32,9 +33,10 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Zakazchik" Type="String" Nullable="false" />
-          <Property Name="Tovar" Type="String" Nullable="false" />
-          <Property Name="Stoimost" Type="Decimal" Nullable="false" />
+          <Property Name="TovarZ" Type="String" Nullable="false" />
           <Property Name="Datazakaza" Type="DateTime" Nullable="false" />
+          <Property Name="CountZ" Type="Int32" Nullable="false" />
+          <Property Name="Stoimost" Type="Decimal" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>

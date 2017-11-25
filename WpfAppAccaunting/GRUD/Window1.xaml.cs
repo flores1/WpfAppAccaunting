@@ -47,14 +47,15 @@ namespace WpfAppAccaunting
         {
             sklads skld=null;
 
-            DateTime? selectedDate = datapostuplenDatePicker.DisplayDate;
+            DateTime? selectedDate = datapostupDatePicker.DisplayDate;
             try {
             skld = new sklads()
             {
-                datapostuplen = selectedDate.Value,
+                Datapostup = selectedDate.Value,
                 Postavshik = postavshikTextBox.Text,
-                stoimost = decimal.Parse(stoimostTextBox.Text),
-                Tovar = tovarTextBox.Text
+                Stoimost = decimal.Parse(stoimostTextBox.Text),
+                Tovar = tovarTextBox.Text,
+                count=Convert.ToInt32 (countTextBox.Text)
             };
            }
             catch(Exception err)

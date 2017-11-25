@@ -11,16 +11,14 @@ namespace WpfAppAccaunting.model
 {
     using System;
     using System.Collections.Generic;
-
-    public partial class sklads 
+    
+    public partial class sklads
     {
-
         public int Id { get; set; }
         public string Postavshik { get; set; }
         public string Tovar { get; set; }
-        public decimal stoimost { get; set; }
-        public System.DateTime datapostuplen { get; set; }
-       
-
+        public System.DateTime Datapostup { get; set; }
+        public int count { get; set; }
+        public decimal Stoimost { get; set; }
     }
 }

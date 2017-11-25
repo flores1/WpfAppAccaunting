@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="2bd6161c7c3b499fbb416cca25811292" Name="Diagram1" >
         <EntityTypeShape EntityType="BaseTovarZakaz.sklads" Width="1.5" PointX="2.25" PointY="1" />
-        <EntityTypeShape EntityType="BaseTovarZakaz.zakazies" Width="1.5" PointX="3.875" PointY="4" />
+        <EntityTypeShape EntityType="BaseTovarZakaz.zakazies" Width="1.5" PointX="4.25" PointY="1.125" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

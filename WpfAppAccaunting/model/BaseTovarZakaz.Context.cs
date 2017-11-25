@@ -9,6 +9,7 @@
 
 namespace WpfAppAccaunting.model
 {
+    
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
@@ -22,7 +23,7 @@ namespace WpfAppAccaunting.model
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            
+           
         }
     
         public virtual DbSet<sklads> sklads { get; set; }
